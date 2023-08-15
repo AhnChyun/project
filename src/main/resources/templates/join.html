@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+  <header>
+    <h2>회원가입</h2>
+  </header>
+
+  <form action="join" method="POST">
+
+    <div class="input-box">
+      <label for="name">이름</label>
+      <input id="name" type="text" name="name" placeholder="이름">
+    </div>
+    <div class="input-box">
+      <label for="id">아이디</label>
+      <input id="id" type="text" name="id" placeholder="아이디">
+      <button th:onclick="idCheck()">중복체크</button>
+    </div>
+
+    <div class="input-box">
+      <label for="password">비밀번호</label>
+      <input id="password" type="password" name="password" placeholder="비밀번호">
+    </div>
+
+    <!-- <div id="forgot">비밀번호 찾기</div> -->
+    <input type="submit" value="회원가입" id="login">
+  </form>
+</body>
+</html>
