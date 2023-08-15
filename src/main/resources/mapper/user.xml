@@ -4,9 +4,26 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.demo.user.userMapper">
-    <select id="test" resultType="String">
+    <select id="login" parameterType="com.example.demo.user.Model.userVo" resultType="int">
         SELECT
-            EQUIPNM
-        FROM EQUIPMENT
+            COUNT(*)
+        FROM USER
+        WHERE ID = #{id}
+          AND PASSWORD = #{password}
     </select>
+    <insert id="join" parameterType="com.example.demo.user.Model.userVo">
+        INSERT INTO USER (
+                    ID
+                  , PASSWORD
+                  , NAME
+                  , ROLE
+                  , REG_DT
+                ) VALUES (
+                    #{id}
+                  , #{password}
+                  , #{name}
+                  , #{role}
+                  , NOW()
+                )
+    </insert>
 </mapper>
